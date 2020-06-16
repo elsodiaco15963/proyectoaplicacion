@@ -10,8 +10,22 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <%
+            String S_usuario;
+            String S_clave;
+        %>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%
+            S_usuario = request.getParameter("f_usuario");
+            S_clave = request.getParameter("f_clave");
+            if(S_usuario.equals("luis")&&S_clave.equals("123")){
+                response.sendRedirect("menu.jsp");
+            }
+            else{
+                response.sendRedirect("login.jsp");
+      
+            }
+        %>
     </body>
 </html>
